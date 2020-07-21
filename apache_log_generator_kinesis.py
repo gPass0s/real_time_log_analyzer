@@ -51,7 +51,7 @@ while True:
     method = numpy.random.choice(methods, p=[0.6, 0.1, 0.1, 0.2])
     endpoint = random.choice(resources)
     if "apps" in endpoint:
-        endpoint += str(random.randint(1000, 10000))
+        endpoint += str(random.randint(1, 5))
     response = numpy.random.choice(responses, p=[0.85, 0.09, 0.02, 0.04])
     content_size = int(random.gauss(5000, 50))
     referer = faker.uri()
@@ -76,4 +76,4 @@ while True:
     f.write(log)
     f.flush()
     f.close()
-    time.sleep(2)
+    time.sleep(random.uniform(0.01,1))
